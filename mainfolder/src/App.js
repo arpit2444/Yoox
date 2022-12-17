@@ -6,6 +6,8 @@ import Navbar3 from './Components/Navbar3';
 import Home from './Pages/Home';
 
 function App() {
+  document.body.style.backgroundColor = "rgb(248,248,248)";
+
   return (
     <div className="App">
       <Navbar1/>

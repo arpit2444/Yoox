@@ -15,7 +15,7 @@ export default function Navbar2(){
       <span style={{fontSize:"12px",fontWeight:"bold" }}>DESIGN+ART</span>
       </div>
       <div>
-        <img src="logo.png" alt="logo" width="150px"  />
+        <img src="logo1.png" alt="logo" width="120px"  />
       </div>
       <div style={{"display":"flex","justifyContent":"space-evenly", "gap":"50px",alignItems:"center"}}>
              <GoSearch  size="22px"/>
