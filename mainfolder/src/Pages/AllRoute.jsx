@@ -6,7 +6,7 @@ import Home from './Home'
 import Login from './Login'
 import Product from './Product'
 import Register from './Register'
-import NotFound from './NotFound'
+import NotFound from './404'
 export default function AllRoute() {
   return (
         <Routes>
