@@ -14,7 +14,7 @@ export default function AllRoute() {
             <Route path='/register' element={<Register/>} ></Route>
             <Route path='/cart' element={<Cart/>} ></Route>
             <Route path='/product' element={<Product/>} ></Route>
-
+            <Route path="*" element={<Notfound />}></Route>
         </Routes>
 
   )
