@@ -6,21 +6,16 @@ import {
   Divider 
 } from '@chakra-ui/react';
 
-import { AiOutlineMail } from 'react-icons/ai';
-import { FaFacebookF } from 'react-icons/fa';
-
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { RiInstagramLine } from 'react-icons/ri';
-
-import { AiFillYoutube } from 'react-icons/ai';
-import { FaPinterestP } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa';
-import { FaMobileAlt } from 'react-icons/fa';
 
 
 
 
 export default function Home() {
+
+const [flag,setFlag] = React.useState(false);
+
+const flagger=()=>{
+}
 
   const arr = [{image:"https://www.yoox.com/images/items/14/14295830IB_14_f.jpg?impolicy=crop&width=306&height=390",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},
   {image:"https://www.yoox.com/images/items/50/50294257EM_14_f.jpg?impolicy=crop&width=306&height=390",name:"APM Monaco WONDERLAND",category:"Earrings",price:"$ 116.00"},
@@ -45,26 +40,11 @@ export default function Home() {
   {image:"https://www.yoox.com/images/items/16/16200872MJ_14_f.jpg?impolicy=crop&width=387&height=490",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},{image:"https://www.yoox.com/images/items/13/13964054RW_14_f.jpg?impolicy=crop&width=387&height=490",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},{image:"https://www.yoox.com/images/items/45/45721715SC_14_f.jpg?impolicy=crop&width=387&height=490",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},{image:"https://www.yoox.com/images/items/14/14293562JI_14_f.jpg?impolicy=crop&width=387&height=490",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},
   ]
 
-    const pre =()=>{
-
-      let box = document.querySelector(".container");
-
-      let wid = box.clientWidth;
-      box.scrollLeft= box.scrollLeft - wid;
-      console.log(wid)
-      }
-      
-      const post =()=>{
-        let box = document.querySelector(".container");
-
-        let wid = box.clientWidth;
-      box.scrollLeft= box.scrollLeft + wid
-      console.log(wid)
-        }
+    
 
         const pre2 =()=>{
 
-          let box = document.querySelector(".container2");
+          let box = document.querySelector(".container5");
     
           let wid = box.clientWidth;
           box.scrollLeft= box.scrollLeft - wid;
@@ -72,12 +52,36 @@ export default function Home() {
           }
           
           const post2 =()=>{
-            let box = document.querySelector(".container2");
+            let box = document.querySelector(".container5");
     
             let wid = box.clientWidth;
-          box.scrollLeft= box.scrollLeft + wid
+          box.scrollLeft= box.scrollLeft + wid;
+          setFlag(true)
+
           console.log(wid)
             }
+
+
+            const pre =()=>{
+
+              let box = document.querySelector(".container2");
+        
+              let wid = box.clientWidth;
+              box.scrollLeft= box.scrollLeft - wid;
+              console.log(wid);
+              
+              }
+              
+              const post =()=>{
+                let box = document.querySelector(".container2");
+        
+                let wid = box.clientWidth;
+              box.scrollLeft= box.scrollLeft + wid;
+              setFlag(true)
+
+              console.log(wid);
+
+                }
 
             
         const pre3 =()=>{
@@ -93,7 +97,9 @@ export default function Home() {
             let box = document.querySelector(".container3");
     
             let wid = box.clientWidth;
-          box.scrollLeft= box.scrollLeft + wid
+          box.scrollLeft= box.scrollLeft + wid;
+          setFlag(true)
+
           console.log(wid)
             }
             
@@ -183,7 +189,7 @@ export default function Home() {
 </div>
 </div>
 {/* Second section ends here */}
-
+{/* 
 <div style={{width:"85%",display:"flex",justifyContent:"space-between",margin:"auto",marginTop:"300px",paddingBottom:"70px"}}>
 <div style={{width:"25%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
   <span style={{fontSize:"32px",fontWeight:"10"}}>NEW ARRIVALS</span>
@@ -194,6 +200,38 @@ export default function Home() {
 
 <button style={{height:"10%",right:"90px",width:"30px",position:"absolute",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"50%"}} onClick={post}><p style={{fontSize:"30px",backgroundColor:"black",color:"white",borderRadius:"50%",padding:"0 15px",width:"50px",height:"50px",cursor:"pointer"}}>&gt;</p></button>
 <div style={{padding:"0 10px",display:"flex",overflowX:"hidden",scrollBehavior:"smooth"}} className="container">
+  {arr.map((el)=>(
+    <div style={{minWidth:"300px",height:"auto",maxWidth:"300px",margin:"5px", overflow:"hidden",backgroundColor:"white",boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}} key={el.image}>
+    <img src={el.image} alt="" />
+    <br />
+    <h2  style={{fontSize:"16px",fontWeight:"bold"}}>{el.name}</h2>
+    <br />
+    <h4>{el.category}</h4>
+    <br />
+    <h4  style={{fontSize:"14px",fontWeight:"bold"}}>{el.price}</h4>
+    <br />
+    <br />
+  </div>
+ ) )} 
+</div>
+</div>
+
+
+</div> */}
+
+
+
+<div style={{width:"85%",display:"flex",justifyContent:"space-between",margin:"auto",marginTop:"300px",paddingBottom:"70px"}}>
+<div style={{width:"25%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
+  <span style={{fontSize:"32px",fontWeight:"100"}}>NEW ARRIVALS</span>
+  <span  style={{fontSize:"14px",fontWeight:"100"}}>VIEW ALL</span>
+</div>
+<div style={{width:"70%"}}>
+
+<button style={{height:"10%",width:"30px",position:"absolute",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"50%"}} onClick={pre} ><p style={{fontSize:"30px",backgroundColor:"black",color:"white",borderRadius:"50%",padding:"0 15px",width:"50px",height:"50px",cursor:"pointer"}}>&lt;</p></button>
+
+<button style={{height:"10%",right:"90px",width:"30px",position:"absolute",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"50%"}} onClick={post}><p style={{fontSize:"30px",backgroundColor:"black",color:"white",borderRadius:"50%",padding:"0 15px",width:"50px",height:"50px",cursor:"pointer"}}>&gt;</p></button>
+<div style={{padding:"0 10px",display:"flex",overflowX:"hidden",scrollBehavior:"smooth"}} className="container2">
   {arr.map((el)=>(
     <div style={{minWidth:"300px",height:"auto",maxWidth:"300px",margin:"5px", overflow:"hidden",backgroundColor:"white",boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}} key={el.image}>
     <img src={el.image} alt="" />
@@ -255,7 +293,7 @@ export default function Home() {
 <button style={{height:"10%",width:"30px",position:"absolute",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"50%"}} onClick={pre2} ><p style={{fontSize:"30px",backgroundColor:"black",color:"white",borderRadius:"50%",padding:"0 15px",width:"50px",height:"50px",cursor:"pointer"}}>&lt;</p></button>
 
 <button style={{height:"10%",right:"90px",width:"30px",position:"absolute",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"50%"}} onClick={post2}><p style={{fontSize:"30px",backgroundColor:"black",color:"white",borderRadius:"50%",padding:"0 15px",width:"50px",height:"50px",cursor:"pointer"}}>&gt;</p></button>
-<div style={{padding:"0 10px",display:"flex",overflowX:"hidden",scrollBehavior:"smooth"}} className="container2">
+<div style={{padding:"0 10px",display:"flex",overflowX:"hidden",scrollBehavior:"smooth"}} className="container5">
   {arr1.map((el)=>(
     <div style={{minWidth:"300px",height:"auto",maxWidth:"300px",margin:"5px", overflow:"hidden",backgroundColor:"white",boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}} key={el.image}>
     <img src={el.image} alt="" />
@@ -341,93 +379,7 @@ export default function Home() {
 {/* 6th section or single product carousal ends here */}
 
 
-<div style={{width:"70%",margin:"auto",display:"flex",justifyContent:"space-evenly",marginTop:"-200px"}}>
-  <div>
-    <span style={{fontSize:"18px",fontWeight:"bold"}}>NEW TO YOOX
-</span><br /><button style={{border:"1px solid black",padding:"0.2px 15px 0.2px 15px"}}></button> <br /><br /> <span style={{fontSize:"14px",color:"grey"}}>Shopping guide</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>iPhone/iPad/Android</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>
-Browse all  Designers</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Browse all Categories</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Gift delivery</span>
-  </div>
-  <div>
-    <span style={{fontSize:"18px",fontWeight:"bold"}}>HELP
-</span><br /><button style={{border:"1px solid black",padding:"0.2px 15px 0.2px 15px"}}></button><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Shipping times & costs</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Payments and web security</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Product quality</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Track your order</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Returns & refunds</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>FAQs</span><br /><br /><span style={{fontSize:"14px"}}>Size Guide</span>
-  </div>
-  <div style={{width:"32%",padding:"20px"}}>
-  <Flex
-      align={'center'}
-    marginTop={'-30px'}
-      >
-       <Box
-          bg={useColorModeValue('white')}
-          p={4}
-          boxShadow={'lg'}>
-             <div>
-              <AiOutlineMail size='25px' style={{margin:"auto",marginTop:"25px"}} />
-      <span style={{fontSize:"24px",fontWeight:"bold"}}>YOOX NEWS</span>
-      <br/>
-      <span style={{fontSize:"14px",color:"gray",}} >Sign up for the newsletter
-and discover the latest arrivals and promotions</span>
-      <br/>
-      <br />
-    <input type="text" style={{backgroundColor:"#F8F8F8",padding:"10px",color:"grey",paddingLeft:"20px",paddingRight:"25px"}} placeholder='INSERT YOUR E-MAIL ID '/>
-    <br />
-    <br />
-    <div style={{display:"flex",justifyContent:"space-around"}}>
-      <div>
-    <input type="radio" id='woman' style={{color:'black'}}  name='gender' value='Woman' checked />
-      <label for="woman">Woman</label>
-    </div>
-    <div>
-    <input type="radio" id='man' style={{color:'black'}} name='gender' value='Man' /> 
-      <label for="man">Man</label>
-    </div>
-    </div>
-<br /><br />
-<div style={{display:'flex',justifyContent:"space-evenly"}}>
-<input type="checkbox" style={{color:"black",width:'20px',height:"20px"}}  />
-<span style={{color:"gray",fontSize:"13px"}}>I consent to receive YOOX newsletters via email. For further information, please consult the Privacy Policy.
-</span>
-</div>
-<br />
-<button style={{backgroundColor:"black",color:"white",padding:"13px 96px 13px 96px "}}>SIGN UP</button>
-    </div>
-        </Box>
-    </Flex>
-  </div>
-  <div>
-    <span style={{fontSize:"18px",fontWeight:"bold"}}>MYOOX</span><br /><button style={{border:"1px solid black",padding:"0.2px 15px 0.2px 15px"}}></button><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Login</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>My Orders</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>My Details</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Dream Box</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Première</span>
-  </div>
-  <div>
-    <span style={{fontSize:"18px",fontWeight:"bold"}}>ABOUT US
-</span><br /><button style={{border:"1px solid black",padding:"0.2px 15px 0.2px 15px"}}></button><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Company Info</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Press</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Affiliation</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Careers</span><br /><br /><span style={{fontSize:"14px",color:"grey"}}>Student Discount</span>
-  </div>
-</div>
-{/* First footer ends here */}
-<Divider color={'white'} />
-<Divider  color={'white'} />
-<Divider   color={'white'}/>
 
-<div style={{display:"flex",justifyContent:'space-between',width:"80%",margin:"auto",paddingTop:"15px",paddingBottom:"15px"}}>
-  <div style={{display:"flex",justifyContent:"space-evenly",gap:"20px"}}>
-    <span style={{fontSize:"11px"}}>CONNECT WITH US</span>
-    <FaFacebookF size={'20px'}/>
-    <AiOutlineTwitter size={'20px'}/>
-    <RiInstagramLine size={'20px'}/>
-    <AiFillYoutube size={'20px'}/>
-    <FaPinterestP size={'20px'}/>
-    <FaTiktok size={'20px'}/>
-  </div>
-  <div style={{display:"flex",justifyContent:"space-evenly",gap:"20px"}}>
-    <FaMobileAlt size={'20px'}/>
-    <span style={{fontSize:"11px"}}>DOWNLOAD THE APP FOR iOS / ANDROID</span>
-  </div>
-</div>
-{/* 2nd footer ends here */}
-<div style={{backgroundColor:"black",paddingTop:"50px",paddingBottom:"50px"}}>
-  <div style={{width:"75%",margin:'auto'}}>
-  <span style={{color:"white",fontSize:"12px"}}>POWERED BY YOOX NET-A-PORTER GROUP - COPYRIGHT © 2000-2022 YOOX NET-A-PORTER GROUP S.P.A. - ALL RIGHTS RESERVED - SIAE LICENCE # 401/I/526</span>
-  <br /><span style={{color:"white",fontSize:"12px"}}>LEGAL AREA / PRIVACY POLICY</span>
-  </div>
-</div>
     </div>
 
   )

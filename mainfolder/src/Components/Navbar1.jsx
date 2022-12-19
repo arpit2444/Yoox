@@ -6,9 +6,9 @@ import { Divider } from '@chakra-ui/react'
 
 
 export default function Navbar1() {
-    const arr =["WANT TO RECEIVE YOUR GIFTS IN TIME? | DISCOVER MORE",
+//     const arr =["WANT TO RECEIVE YOUR GIFTS IN TIME? | DISCOVER MORE",
         
-"FREE STANDARD SHIPPING ON ORDERS OVER $100"]
+// "FREE STANDARD SHIPPING ON ORDERS OVER $100"]
       
         const [slide, setSlide] = useState(0);
          
@@ -34,7 +34,8 @@ export default function Navbar1() {
         </div>
 
 <div>
-    { slide===0?<span>{arr[0]}</span>:<span>{arr[1]}</span>}
+    {/* { slide===0?<span>{arr[0]}</span>:<span>{arr[1]}</span>} */}
+    <span>FREE STANDARD SHIPPING ON ORDERS OVER $100</span>
 </div>
 
         <div style={{"display":"flex","justifyContent":"space-evenly", "gap":"30px",alignItems:"center"}}>

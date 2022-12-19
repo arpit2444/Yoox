@@ -19,7 +19,7 @@ export default function () {
     <div>
         <Popover>
   <PopoverTrigger>
-    <span>CLOTHING</span>
+    <span style={{cursor:"pointer"}}>CLOTHING</span>
   </PopoverTrigger>
   <PopoverContent w={'100%'} style={{backgroundColor:"white"}}>
   <Card align='center'  w={'100%'} >

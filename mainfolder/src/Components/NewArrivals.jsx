@@ -2,28 +2,32 @@ import {
     Popover,
     PopoverTrigger,
     PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
+  
     Card,
     Divider
    
   } from '@chakra-ui/react'
 
-import React from 'react'
+import React from 'react';
+import {Link as RouterLink} from "react-router-dom"
 
 export default function () {
-    const arr = [{image:"https://www.yoox.com/images/items/14/14295830IB_14_f.jpg?impolicy=crop&width=306&height=390",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},
+    const arr4 = [{image:"https://www.yoox.com/images/items/14/14295830IB_14_f.jpg?impolicy=crop&width=306&height=390",name:"STELLA McCARTNEY",category:"Sweaters",price:"$ 594.00"},
   {image:"https://www.yoox.com/images/items/50/50294257EM_14_f.jpg?impolicy=crop&width=306&height=390",name:"APM MONACO",category:"Earrings",price:"$ 116.00"},
   {image:"https://www.yoox.com/images/items/45/45717732NW_14_f.jpg?impolicy=crop&width=306&height=390",name:"MARNI",category:"Cross-body bags",price:"$ 1,903.00"},
   
   ]
+
+
+
+
+
+  
   return (
     <div>
         <Popover>
   <PopoverTrigger>
-    <span>NEWARRIVALS</span>
+    <span  style={{cursor:"pointer",}}>NEWARRIVALS</span>
   </PopoverTrigger>
   <PopoverContent w={'100%'} style={{backgroundColor:"white"}}>
   <Card align='center'  w={'100%'} >
@@ -41,9 +45,10 @@ export default function () {
  <span>TOP DESIGNERS</span><br /><br />
  <span>UNIQUE FINDS</span><br /><br />
  </div>
-
+ <RouterLink to="/product" >
  <div style={{padding:"0 10px",display:"flex"}} className="container">
-  {arr.map((el)=>(
+ 
+  {arr4.map((el)=>(
     <div style={{minWidth:"200px",height:"auto",maxWidth:"200px",backgroundColor:"white"}} key={el.image}>
     <img src={el.image} alt="" />
     <br />
@@ -56,7 +61,7 @@ export default function () {
     <br />
   </div>
  ) )} 
-</div>
+</div></RouterLink>
 </div>
 </Card>
   </PopoverContent>
