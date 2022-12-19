@@ -19,7 +19,9 @@ export default function Cart() {
    const [ship,setShip] = React.useState(0);
 
    const { isOpen, onOpen, onClose } = useDisclosure()
-
+const handle=()=>{
+  setCount(0)
+}
 
     const handleChange=(e)=>{
       e.target.value=="Man"?setShip(14.95):setShip(0)
@@ -35,9 +37,9 @@ export default function Cart() {
                 {textDecoration:"underline",marginTop:"10px" }
             }> BACK TO SHOPPING</span>
             <div style={{display:"flex",gap:"8px"}}>
-                <button onClick={onOpen}  style={{backgroundColor:"#FFC439",padding:"13px 20px 13px 20px"}}> <div style={{display:"flex",gap:"10px"}}> <img src="https://www.urbantool.com/wp-content/uploads/2016/12/paypal-logo-png.png" width="70px" alt="" /> <span>CHECK OUT</span></div> </button>
+                <button onClick={()=>{onOpen(); handle()}} style={{backgroundColor:"#FFC439",padding:"13px 20px 13px 20px"}}> <div style={{display:"flex",gap:"10px"}}> <img src="https://www.urbantool.com/wp-content/uploads/2016/12/paypal-logo-png.png" width="70px" alt="" /> <span>CHECK OUT</span></div> </button>
                 <span style={{marginTop:"10px"}}>or</span>
-                <button style={{backgroundColor:"black",padding:"13px 20px 13px 20px",color:"white"}}>PROCEED WITH YOUR ORDER &gt;</button>
+                <button onClick={()=>{onOpen(); handle()}} style={{backgroundColor:"black",padding:"13px 20px 13px 20px",color:"white"}}>PROCEED WITH YOUR ORDER &gt;</button>
             </div>
         </div>
         <br /><br />
@@ -130,9 +132,9 @@ STELLA McCARTNEY</span>
                 {textDecoration:"underline" }
             }> BACK TO SHOPPING</span>
             <div style={{display:"flex",gap:"8px"}}>
-                <button style={{backgroundColor:"#FFC439",padding:"13px 20px 13px 20px"}}> <div style={{display:"flex",gap:"10px"}}> <img src="https://www.urbantool.com/wp-content/uploads/2016/12/paypal-logo-png.png" width="70px" alt="" /> <span>CHECK OUT</span></div> </button>
+                <button onClick={()=>{onOpen(); handle()}} style={{backgroundColor:"#FFC439",padding:"13px 20px 13px 20px"}}> <div style={{display:"flex",gap:"10px"}}> <img src="https://www.urbantool.com/wp-content/uploads/2016/12/paypal-logo-png.png" width="70px" alt="" /> <span>CHECK OUT</span></div> </button>
                 <span style={{marginTop:"10px"}}>or</span>
-                <button style={{backgroundColor:"black",padding:"13px 20px 13px 20px",color:"white"}}>PROCEED WITH YOUR ORDER &gt;</button>
+                <button onClick={()=>{onOpen(); handle()}} style={{backgroundColor:"black",padding:"13px 20px 13px 20px",color:"white"}}>PROCEED WITH YOUR ORDER &gt;</button>
             </div>
         </div>
         <br /><br />
