@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GoPencil} from 'react-icons/go';
 import { AiTwotoneUnlock } from 'react-icons/ai';
 import { Divider } from '@chakra-ui/react'
-
+import {Link as RouterLink} from "react-router-dom"
 
 
 export default function Navbar1() {
@@ -39,14 +39,18 @@ export default function Navbar1() {
 </div>
 
         <div style={{"display":"flex","justifyContent":"space-evenly", "gap":"30px",alignItems:"center"}}>
+          <RouterLink to="/register" >
             <div  style={{"display":"flex","justifyContent":"space-evenly",alignItems:"center"}}>
             <GoPencil/>
             <span style={{textDecoration:"underline",fontSize:"10px",fontWeight:"bold"}} >REGISTER</span>
             </div>
+            </RouterLink>
+            <RouterLink to="/login" >
             <div style={{"display":"flex","justifyContent":"space-evenly",alignItems:"center"}}>
             <AiTwotoneUnlock/>
             <span style={{textDecoration:"underline",fontSize:"10px",fontWeight:"bold"}}>LOGIN</span>
             </div>
+            </RouterLink>
         </div>
         
     </div>

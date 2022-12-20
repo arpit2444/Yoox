@@ -18,9 +18,12 @@ export default function Cart() {
     const {count,setCount} = React.useContext(CountContext);
    const [ship,setShip] = React.useState(0);
 
-   const { isOpen, onOpen, onClose } = useDisclosure()
+   const { isOpen, onOpen, onClose } = useDisclosure();
+
+
 const handle=()=>{
-  setCount(0)
+  setTimeout(()=>{ setCount(0)},3000)
+ 
 }
 
     const handleChange=(e)=>{
