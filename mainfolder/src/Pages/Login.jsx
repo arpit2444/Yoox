@@ -12,9 +12,23 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-
+import { useState } from 'react';
+import axios from "axios";
 export default function Login() {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+  const [tok,setTok] = useState(false)
+  const handleSubmit=()=>{
+    const newObj={email,password}
+    axios.post(`https://reqres.in/api/login`,newObj)
+    .then((res)=>setTok(true))
+    .catch((e)=>setTok(false))
+  }
+
+
   return (
+    <div>
+      {tok?<h1 style={{fontWeight:"bold",fontSize:"40px",marginTop:"50px"}} >You are Logged in Now</h1>:
     <Flex
       minH={'100vh'}
       align={'center'}
@@ -22,23 +36,22 @@ export default function Login() {
       >
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
-            to enjoy all of our cool features          </Text>
+          <Heading fontSize={'4xl'}>Login </Heading>
+         
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
+          // bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input type="email"  value={email} onChange={(e)=>setEmail(e.target.value)} />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input type="password"  value={password} onChange={(e)=>setPassword(e.target.value)} />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -49,17 +62,19 @@ export default function Login() {
                 <Link color={'black'}>Forgot password?</Link>
               </Stack>
               <Button
+              onClick={handleSubmit}
                 bg={'black'}
                 color={'white'}
                 _hover={{
                   bg: 'black',
                 }}>
-                Sign in
+                Log in
               </Button>
             </Stack>
           </Stack>
         </Box>
       </Stack>
-    </Flex>
+    </Flex>}
+    </div>
   );
 }

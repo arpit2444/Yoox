@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   Link,
 } from '@chakra-ui/react';
+import {Link as RouterLink} from "react-router-dom"
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
@@ -31,9 +32,7 @@ export default function Register() {
           <Heading fontSize={'4xl'} textAlign={'center'}>
             Register
           </Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
-            to enjoy all of our cool features
-          </Text>
+        
         </Stack>
         <Box
           rounded={'lg'}
@@ -87,9 +86,10 @@ export default function Register() {
               </Button>
             </Stack>
             <Stack pt={6}>
+              <RouterLink to="/login">
               <Text align={'center'}>
-                Already a user? <Link color={'black'}>Login</Link>
-              </Text>
+                Already a user?Login
+              </Text></RouterLink>
             </Stack>
           </Stack>
         </Box>

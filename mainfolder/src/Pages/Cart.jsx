@@ -22,8 +22,9 @@ export default function Cart() {
 
 
 const handle=()=>{
-  setTimeout(()=>{ setCount(0)},3000)
- 
+ window.location.replace('https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-3Y110426XD993541N&useraction=commit')
+ setTimeout(()=>{ setCount(0)},4000)
+
 }
 
     const handleChange=(e)=>{
@@ -146,7 +147,7 @@ STELLA McCARTNEY</span>
         <ModalContent>
           <ModalCloseButton />
           <ModalBody style={{fontWeight:"bold",fontSize:"28px"}}>
-            Hurray! Your Order is on the Way.
+           You are Redirecting to the Paypal...
           </ModalBody>
 
           <ModalFooter>
